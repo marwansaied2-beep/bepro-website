@@ -1,0 +1,925 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Be Pro – أكاديمية تدريب كرة قدم فنية احترافية مع كوتش فارس جميل. التجمع الخامس و6 أكتوبر.">
+<meta property="og:title" content="Be Pro Football Academy">
+<meta property="og:image" content="/img/logo-dark.png">
+<style>[hidden]{display:none!important}body{margin:0}</style>
+<title>Be Pro Football Academy</title>
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&display=swap">
+<style>
+/* Layout: one dark pitch-at-night scroll; full-bleed bands, 1180px content column, red reserved for action and money. */
+:root{
+  --red:#EF2E33; --red-deep:#C41F26; --red-glow:rgba(239,46,51,.35);
+  --bg:#0A0A0A; --char:#141414; --char-2:#1C1C1C; --line:#2A2A2A;
+  --fg:#FFFFFF; --muted:#A0A0A0; --dim:#6E6E6E;
+  --ar:"Cairo","Tajawal",system-ui,sans-serif;
+  --en:"Outfit","Montserrat",system-ui,sans-serif;
+  --r-sm:6px; --r-md:12px; --r-lg:20px;
+  --max:1180px;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:120px}
+body{background:var(--bg);color:var(--fg);font-family:var(--ar);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--red)}
+#app[data-lang="en"]{font-family:var(--en)}
+#app[data-lang="en"] .num, .num{font-family:var(--en);font-variant-numeric:tabular-nums}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+h1,h2,h3{margin:0;line-height:1.15;text-wrap:balance;font-weight:900}
+p{margin:0}
+.wrap{max-width:var(--max);margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.band{padding-block:clamp(64px,9vw,120px)}
+.band.alt{background:var(--char)}
+.hl{color:var(--red)}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--en);font-weight:700;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--red)}
+.eyebrow::before{content:"";width:28px;height:2px;background:var(--red)}
+.h2{font-size:clamp(30px,5vw,52px);margin-top:14px}
+.lead{color:var(--muted);font-size:clamp(16px,1.6vw,18px);max-width:60ch;margin-top:16px}
+.sec-head{margin-bottom:clamp(36px,5vw,56px)}
+.ph{display:inline-block;font-family:var(--en);font-size:11px;font-weight:600;letter-spacing:.06em;color:#FFB4B6;border:1px dashed rgba(239,46,51,.6);border-radius:4px;padding:1px 7px;vertical-align:middle;line-height:1.6;white-space:nowrap}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 28px;border-radius:999px;font-weight:800;font-size:16px;border:2px solid transparent;cursor:pointer;transition:transform .2s ease,background .2s ease,box-shadow .2s ease,border-color .2s ease;font-family:inherit;white-space:nowrap}
+.btn:focus-visible,.seg button:focus-visible,.faq summary:focus-visible,a:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.btn-red{background:var(--red);color:#fff;box-shadow:0 10px 30px -10px var(--red-glow)}
+.btn-red:hover{background:var(--red-deep);transform:translateY(-2px);box-shadow:0 16px 36px -10px var(--red-glow)}
+.btn-ghost{border-color:rgba(255,255,255,.35);color:#fff;background:transparent}
+.btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.06)}
+.btn svg{width:20px;height:20px;flex:none}
+
+/* top: BF bar + header */
+.topstack{position:sticky;top:env(safe-area-inset-top,0px);z-index:50}
+.bf{background:var(--red);color:#fff}
+.bf .wrap{display:flex;line-height:1.5;align-items:center;justify-content:center;gap:10px 18px;flex-wrap:wrap;padding-block:8px;font-weight:700;font-size:14px;text-align:center}
+.bf .tag{font-family:var(--en);font-weight:900;letter-spacing:.12em;background:#000;padding:2px 10px;border-radius:4px;font-size:12px}
+.cd{display:inline-flex;gap:6px;direction:ltr}
+.cd span{background:rgba(0,0,0,.28);border-radius:5px;padding:1px 7px;font-family:var(--en);font-weight:800;font-variant-numeric:tabular-nums;min-width:2.4em;text-align:center}
+.cd small{font-size:10px;opacity:.85;font-weight:600;margin-inline-start:2px}
+header.site{background:rgba(10,10,10,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+header.site .wrap{display:flex;align-items:center;gap:20px;height:72px}
+.brand img{height:34px;width:auto}
+nav.main{display:flex;gap:26px;margin-inline-start:auto;font-weight:600;font-size:15px;color:#d8d8d8}
+nav.main a{position:relative;padding-block:6px}
+nav.main a:hover{color:#fff}
+nav.main a::after{content:"";position:absolute;inset-inline:0;bottom:0;height:2px;background:var(--red);transform:scaleX(0);transition:transform .25s}
+nav.main a:hover::after{transform:scaleX(1)}
+.hdr-actions{display:flex;align-items:center;gap:10px}
+#app[dir="rtl"] header.site .brand{order:2;margin-inline-start:auto}
+#app[dir="rtl"] nav.main{margin-inline-start:0}
+.lang{background:transparent;border:1px solid var(--line);color:#fff;border-radius:999px;height:40px;padding:0 14px;font-weight:700;cursor:pointer;font-family:var(--en)}
+.lang:hover{border-color:#fff}
+.hdr-actions .btn{min-height:42px;padding:0 20px;font-size:15px}
+.burger{display:none;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:transparent;color:#fff;cursor:pointer}
+.mnav{display:none}
+.mnav[hidden]{display:none!important}
+@media (max-width:960px){
+  nav.main{display:none}
+  #app[dir="ltr"] .hdr-actions{margin-inline-start:auto}
+  .burger{display:inline-grid;place-items:center}
+  .mnav{display:block;background:var(--bg);border-bottom:1px solid var(--line)}
+  .mnav .wrap{display:grid;grid-template-columns:1fr 1fr;gap:4px;padding-block:12px}
+  .mnav a{padding:12px;border-radius:var(--r-sm);background:var(--char);font-weight:700;text-align:center}
+}
+@media (max-width:420px){ .hdr-actions .btn{padding:0 14px} .brand img{height:28px} .bf .wrap{font-size:12.5px;gap:6px 10px} .bf .tag{display:none} }
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:radial-gradient(900px 600px at var(--glow-x,25%) 60%,rgba(239,46,51,.20),transparent 60%),var(--bg)}
+.hero .mark{position:absolute;inset-inline-end:-8%;top:50%;width:min(720px,80vw);transform:translateY(-50%);opacity:.05;pointer-events:none}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.1fr .9fr;align-items:end;gap:24px;min-height:min(780px,calc(100svh - 110px))}
+.hero-copy{padding-block:72px;align-self:center}
+.hero h1{font-size:clamp(42px,7.4vw,92px);letter-spacing:-.01em;line-height:1.05}
+#app[data-lang="en"] .hero h1{letter-spacing:-.025em;text-transform:uppercase}
+.hero .sub{color:#cfcfcf;font-size:clamp(17px,1.8vw,20px);max-width:44ch;margin-top:22px}
+.age{display:inline-flex;align-items:center;gap:12px;margin-bottom:22px;border:1px solid var(--line);border-radius:999px;padding:6px 16px 6px 6px;background:rgba(255,255,255,.03);font-weight:700;font-size:14px}
+#app[dir="rtl"] .age{padding:6px 6px 6px 16px}
+.age b{background:#fff;color:#000;border-radius:999px;padding:2px 12px;font-family:var(--en);font-weight:900}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.hero-pic{position:relative;align-self:end;height:100%;display:flex;align-items:flex-end;justify-content:center}
+.hero-pic img{width:100%;max-width:520px;height:auto;max-height:740px;object-fit:contain;object-position:bottom;filter:drop-shadow(0 30px 60px rgba(0,0,0,.6))}
+.hero-pic::after{content:"";position:absolute;inset:auto 0 0 0;height:30%;background:linear-gradient(transparent,var(--bg))}
+.hero-loc{display:flex;gap:18px;flex-wrap:wrap;margin-top:28px;color:var(--muted);font-size:14px;font-weight:600}
+.hero-loc span{display:inline-flex;align-items:center;gap:8px}
+.hero-loc i{width:7px;height:7px;border-radius:50%;background:var(--red);display:inline-block}
+@media (max-width:860px){
+  .hero .wrap{grid-template-columns:1fr;min-height:0;gap:0}
+  .hero .mark{display:none}
+  .hero-pic{order:-1;height:auto;margin-inline:-16px;max-height:44svh;overflow:hidden;align-items:flex-start}
+  .hero-pic img{max-width:440px;margin-inline:auto}
+  .hero-pic::after{height:55%}
+  .hero-copy{padding-block:0 48px;margin-top:-70px;position:relative;z-index:2}
+  .cta-row .btn{flex:1 1 200px}
+}
+
+/* stats */
+.stats{border-block:1px solid var(--line);background:var(--char)}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);padding-block:30px}
+.stat{padding:8px 20px;border-inline-start:1px solid var(--line);display:flex;flex-direction:column;gap:2px}
+.stat:first-child{border-inline-start:0}
+.stat .v{font-family:var(--en);font-weight:900;font-size:clamp(30px,4vw,46px);line-height:1.1;font-variant-numeric:tabular-nums}
+.stat .v em{font-style:normal;color:var(--red)}
+.stat .l{color:var(--muted);font-size:14px;font-weight:600}
+@media (max-width:760px){.stats .wrap{grid-template-columns:1fr 1fr;row-gap:22px}.stat:nth-child(3){border-inline-start:0}}
+
+/* who */
+.who{display:grid;grid-template-columns:1.4fr 1fr;gap:20px}
+.who-list{display:grid;gap:14px}
+.persona{display:grid;grid-template-columns:56px 1fr;gap:18px;align-items:start;padding:24px;border-radius:var(--r-md);background:var(--char-2);border:1px solid var(--line);transition:border-color .25s,transform .25s}
+.persona:hover{border-color:rgba(239,46,51,.55);transform:translateY(-3px)}
+.persona .ic{width:56px;height:56px;border-radius:14px;background:rgba(239,46,51,.12);display:grid;place-items:center;color:var(--red)}
+.persona .ic svg{width:28px;height:28px}
+.persona h3{font-size:20px;font-weight:800}
+.persona p{color:var(--muted);margin-top:4px}
+.notfor{padding:28px;border-radius:var(--r-md);border:1px dashed #3a3a3a;background:repeating-linear-gradient(135deg,transparent 0 14px,rgba(255,255,255,.015) 14px 28px)}
+.notfor h3{font-size:22px;display:flex;gap:10px;align-items:center}
+.notfor ul{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:14px}
+.notfor li{display:grid;grid-template-columns:22px 1fr;gap:12px;color:#cfcfcf}
+.notfor li svg{width:22px;height:22px;color:var(--dim);margin-top:3px}
+.notfor .foot{margin-top:22px;padding-top:18px;border-top:1px solid var(--line);font-weight:800}
+@media (max-width:860px){.who{grid-template-columns:1fr}}
+
+/* method */
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden}
+.pillar{background:var(--bg);padding:34px 26px 30px;position:relative;transition:background .3s}
+.pillar:hover{background:#111}
+.pillar .k{font-family:var(--en);font-weight:800;font-size:13px;letter-spacing:.16em;color:var(--dim);text-transform:uppercase}
+.pillar svg{width:44px;height:44px;color:var(--red);margin:22px 0 18px}
+.pillar h3{font-size:22px;font-weight:800}
+.pillar p{color:var(--muted);margin-top:8px;font-size:15px}
+.pillar::after{content:"";position:absolute;inset-inline-start:0;top:0;height:3px;width:0;background:var(--red);transition:width .4s}
+.pillar:hover::after{width:100%}
+@media (max-width:960px){.pillars{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.pillars{grid-template-columns:1fr}}
+
+/* founder */
+.founder{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,5vw,72px);align-items:center}
+.f-pic{position:relative;border-radius:var(--r-lg);overflow:hidden;background:radial-gradient(70% 55% at 50% 38%,rgba(239,46,51,.38),transparent 70%),linear-gradient(180deg,#1F1F1F,#0E0E0E);aspect-ratio:4/5;max-width:100%;display:flex;align-items:flex-start;justify-content:center}
+.f-pic img{width:86%;height:auto;object-fit:contain;margin-top:9%}
+.f-pic .wm{position:absolute;width:70%;top:6%;inset-inline-start:15%;opacity:.07}
+.f-pic .badge{position:absolute;inset-inline-start:18px;bottom:18px;background:rgba(10,10,10,.8);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:var(--r-md);padding:12px 16px}
+.f-pic .badge b{display:block;font-size:17px}
+.f-pic .badge span{color:var(--muted);font-size:13px}
+.creds{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
+.cred{background:var(--char-2);border:1px solid var(--line);border-radius:var(--r-md);padding:16px 18px;font-weight:700;display:flex;flex-direction:column;gap:6px}
+.cred small{color:var(--muted);font-weight:600}
+blockquote.q{margin:32px 0 0;padding:26px 28px;border-radius:var(--r-md);background:linear-gradient(135deg,rgba(239,46,51,.14),rgba(239,46,51,0) 70%);position:relative;font-size:clamp(19px,2.2vw,24px);font-weight:800;line-height:1.5}
+blockquote.q svg{position:absolute;top:-16px;inset-inline-start:22px;width:36px;height:36px;color:var(--red)}
+blockquote.q cite{display:block;margin-top:12px;font-style:normal;font-size:14px;font-weight:600;color:var(--muted)}
+@media (max-width:860px){.founder{grid-template-columns:1fr}.f-pic{max-width:460px;margin-inline:auto;width:100%}}
+@media (max-width:420px){.creds{grid-template-columns:1fr}}
+
+/* session timeline */
+.timeline{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;position:relative}
+.timeline::before{content:"";position:absolute;top:27px;inset-inline:6%;height:2px;background:linear-gradient(90deg,var(--line),var(--red),var(--line))}
+.step{position:relative;text-align:center;padding:0 6px}
+.step .dot{width:56px;height:56px;margin:0 auto;border-radius:50%;background:var(--bg);border:2px solid var(--red);display:grid;place-items:center;font-family:var(--en);font-weight:900;font-size:15px;position:relative;z-index:1}
+.step .min{font-family:var(--en);color:var(--red);font-weight:800;font-size:13px;letter-spacing:.1em;margin-top:16px}
+.step h3{font-size:19px;font-weight:800;margin-top:4px}
+.step p{color:var(--muted);font-size:14px;margin-top:6px}
+.tl-total{display:flex;justify-content:center;gap:10px;align-items:center;margin-top:40px;color:var(--muted);font-weight:600;flex-wrap:wrap}
+.tl-total b{color:#fff;font-family:var(--en);font-size:20px}
+@media (max-width:860px){
+  .timeline{grid-template-columns:1fr;gap:0}
+  .timeline::before{top:0;bottom:0;inset-inline:27px auto;width:2px;height:auto;background:linear-gradient(180deg,var(--red),var(--line))}
+  .step{display:grid;grid-template-columns:56px 1fr;gap:4px 18px;text-align:start;padding:0 0 26px}
+  .step .dot{grid-row:span 3;margin:0}
+  .step .min{margin-top:2px}
+}
+.media-ph{margin-top:48px;display:grid;grid-template-columns:2fr 1fr 1fr;gap:12px}
+.media-ph div{aspect-ratio:4/3;border-radius:var(--r-md);border:1px dashed #3a3a3a;display:grid;place-items:center;text-align:center;color:var(--dim);font-size:13px;font-weight:600;padding:12px;background:repeating-linear-gradient(45deg,#121212 0 12px,#151515 12px 24px)}
+.media-ph div:first-child{grid-row:span 2;aspect-ratio:auto}
+@media (max-width:640px){.media-ph{grid-template-columns:1fr 1fr}.media-ph div:first-child{grid-column:span 2;grid-row:auto;aspect-ratio:16/9}}
+
+/* locations */
+.locs{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.loc{border-radius:var(--r-lg);border:1px solid var(--line);background:var(--char-2);overflow:hidden;display:flex;flex-direction:column;transition:border-color .25s,transform .25s}
+.loc:hover{border-color:rgba(239,46,51,.5);transform:translateY(-3px)}
+.loc .top{padding:26px 26px 22px;background:radial-gradient(120% 100% at 100% 0,rgba(239,46,51,.18),transparent 60%);border-bottom:1px solid var(--line)}
+.loc .area{font-family:var(--en);font-weight:800;letter-spacing:.14em;font-size:12px;color:var(--red);text-transform:uppercase}
+.loc h3{font-size:clamp(24px,3vw,30px);margin-top:6px}
+.loc .club{color:#d8d8d8;font-weight:700;margin-top:2px}
+.loc dl{margin:0;padding:22px 26px;display:grid;gap:14px;flex:1}
+.loc dl div{display:grid;grid-template-columns:110px 1fr;gap:10px}
+.loc dt{color:var(--muted);font-weight:600;font-size:14px}
+.loc dd{margin:0;font-weight:700;min-width:0}
+.loc .act{padding:0 26px 26px;display:flex;gap:10px;flex-wrap:wrap}
+.loc .act .btn{flex:1 1 160px;min-height:48px;font-size:15px}
+@media (max-width:760px){.locs{grid-template-columns:1fr}}
+@media (max-width:420px){.loc dl div{grid-template-columns:1fr;gap:2px}}
+
+/* pricing */
+.pricing{position:relative;overflow:hidden}
+.pricing .bgmark{position:absolute;width:900px;max-width:none;top:-140px;inset-inline-start:-260px;opacity:.035;pointer-events:none}
+.picker{display:flex;flex-wrap:wrap;align-items:center;gap:12px 16px;margin-bottom:34px}
+.picker span{font-weight:700;color:var(--muted)}
+.seg{display:inline-flex;background:var(--char-2);border:1px solid var(--line);border-radius:999px;padding:4px}
+.seg button{border:0;background:transparent;color:#cfcfcf;font-family:inherit;font-weight:800;font-size:15px;padding:10px 18px;border-radius:999px;cursor:pointer;transition:background .2s,color .2s}
+.seg button[aria-pressed="true"]{background:#fff;color:#000}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch;position:relative}
+.plan{position:relative;border-radius:var(--r-lg);background:var(--char-2);border:1px solid var(--line);padding:30px 26px 26px;display:flex;flex-direction:column;transition:transform .3s,border-color .3s,box-shadow .3s}
+.plan:hover{transform:translateY(-4px);border-color:#3d3d3d}
+.plan .ribbon{position:absolute;top:-14px;inset-inline-start:24px;font-weight:800;font-size:13px;border-radius:999px;padding:4px 14px;background:#fff;color:#000}
+.plan .bfb{display:inline-flex;align-items:center;gap:8px;font-family:var(--en);font-size:11px;font-weight:900;letter-spacing:.14em;color:var(--red);border:1px solid rgba(239,46,51,.5);border-radius:4px;padding:3px 8px;align-self:flex-start}
+.plan .bfb img{width:16px;height:16px}
+.plan h3{font-size:24px;margin-top:16px}
+.plan .dur{color:var(--muted);font-weight:600;font-size:14px}
+.price{margin-top:22px;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.price .amt{font-family:var(--en);font-weight:900;font-size:clamp(44px,5vw,56px);line-height:1;font-variant-numeric:tabular-nums}
+.price .cur{font-weight:800;color:var(--muted)}
+.was{font-family:var(--en);color:var(--dim);text-decoration:line-through;font-weight:600;font-size:16px;min-height:24px;margin-top:6px}
+.metrics{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:18px}
+.metric{background:var(--bg);border:1px solid var(--line);border-radius:var(--r-sm);padding:10px 12px}
+.metric small{display:block;color:var(--muted);font-size:12px;font-weight:600}
+.metric b{font-family:var(--en);font-size:18px;font-weight:800;font-variant-numeric:tabular-nums}
+.metric.save b{color:var(--red)}
+.plan ul{list-style:none;padding:0;margin:22px 0 26px;display:grid;gap:11px;flex:1}
+.plan li{display:grid;grid-template-columns:20px 1fr;gap:10px;font-size:15px;color:#ddd}
+.plan li svg{width:20px;height:20px;color:var(--red);margin-top:3px}
+.plan .btn{width:100%}
+.plan.popular{border-color:#4a4a4a}
+.plan.best{border:2px solid var(--red);background:linear-gradient(180deg,#221315,#161616 45%);box-shadow:0 0 0 6px rgba(239,46,51,.08),0 30px 80px -30px var(--red-glow);transform:scale(1.04);z-index:2}
+.plan.best:hover{transform:scale(1.04) translateY(-4px)}
+.plan.best .ribbon{background:var(--red);color:#fff}
+.plan.best .amt{color:#fff}
+.plan .pct{position:absolute;top:22px;inset-inline-end:22px;width:64px;height:64px;border-radius:50%;background:var(--red);display:grid;place-items:center;text-align:center;font-family:var(--en);font-weight:900;line-height:1;font-size:20px;transform:rotate(-8deg)}
+.plan .pct small{display:block;font-size:10px;letter-spacing:.1em}
+@media (max-width:960px){
+  .plans{grid-template-columns:1fr;gap:26px;max-width:520px;margin-inline:auto}
+  .plan.best{order:-1;transform:none}.plan.best:hover{transform:translateY(-4px)}
+  .plan.popular{order:0}.plan.monthly{order:1}
+}
+.urgency{margin-top:40px;display:flex;align-items:center;justify-content:space-between;gap:16px 24px;flex-wrap:wrap;padding:20px 24px;border-radius:var(--r-md);border:1px solid rgba(239,46,51,.4);background:rgba(239,46,51,.06)}
+.urgency p{font-weight:700;display:flex;gap:10px;align-items:center}
+.urgency .pulse{width:10px;height:10px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 var(--red-glow);animation:pulse 1.8s infinite;flex:none}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(239,46,51,.6)}70%{box-shadow:0 0 0 12px rgba(239,46,51,0)}100%{box-shadow:0 0 0 0 rgba(239,46,51,0)}}
+.urgency .cd span{background:#000;color:#fff;font-size:18px;padding:4px 10px}
+.pay-note{margin-top:16px;color:var(--dim);font-size:13px;text-align:center}
+
+/* testimonials */
+.tests{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tcard{border-radius:var(--r-md);background:var(--char-2);border:1px solid var(--line);padding:24px;display:flex;flex-direction:column;gap:18px}
+.tcard .stars{display:flex;gap:3px;color:var(--red)}
+.tcard .stars svg{width:16px;height:16px}
+.tcard p{color:#9a9a9a;font-style:italic;flex:1}
+.tcard .who-t{display:flex;gap:12px;align-items:center}
+.avatar{width:46px;height:46px;border-radius:50%;border:1px dashed #444;display:grid;place-items:center;color:var(--dim);flex:none}
+.avatar svg{width:22px;height:22px}
+.tcard b{display:block}
+.tcard small{color:var(--muted)}
+@media (max-width:960px){.tests{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.tests{grid-template-columns:1fr}}
+
+/* faq */
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(28px,5vw,64px);align-items:start}
+.faq{display:grid;gap:10px}
+.faq details{border:1px solid var(--line);border-radius:var(--r-md);background:var(--char-2);transition:border-color .2s}
+.faq details[open]{border-color:#444}
+.faq summary{list-style:none;cursor:pointer;padding:20px 22px;font-weight:800;font-size:17px;display:flex;justify-content:space-between;gap:16px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary i{width:28px;height:28px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;flex:none;transition:transform .25s,background .25s}
+.faq summary i::before{content:"+";font-style:normal;font-family:var(--en);font-weight:700}
+.faq details[open] summary i{transform:rotate(45deg);background:var(--red);border-color:var(--red)}
+.faq .a{padding:0 22px 22px;color:#bdbdbd}
+@media (max-width:860px){.faq-grid{grid-template-columns:1fr}}
+
+/* final cta */
+.final{position:relative;overflow:hidden;text-align:center;background:radial-gradient(60% 80% at 50% 100%,rgba(239,46,51,.25),transparent 70%),var(--bg)}
+.final .wm{position:absolute;left:50%;top:50%;width:min(760px,120vw);transform:translate(-50%,-50%);opacity:.06;pointer-events:none}
+.final .wrap{position:relative}
+.final h2{font-size:clamp(36px,6.5vw,76px)}
+.final p{color:#cfcfcf;margin:18px auto 0;max-width:52ch;font-size:18px}
+.final .cta-row{justify-content:center}
+
+/* footer */
+footer{background:var(--char);border-top:1px solid var(--line);padding-block:56px 28px;font-size:15px}
+.f-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:36px}
+.f-grid h4{margin:0 0 14px;font-size:13px;font-family:var(--en);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.f-grid ul{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.f-grid .logo img{height:40px;width:auto}
+.f-grid .tagline{color:var(--muted);margin-top:16px;max-width:36ch}
+.social{display:flex;gap:10px;margin-top:18px}
+.social a{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:border-color .2s,background .2s}
+.social a:hover{border-color:var(--red);background:rgba(239,46,51,.1)}
+.social svg{width:18px;height:18px}
+.copy{margin-top:44px;padding-top:22px;border-top:1px solid var(--line);color:var(--dim);font-size:13px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media (max-width:760px){.f-grid{grid-template-columns:1fr}}
+
+/* floating wa */
+.fab{position:fixed;z-index:70;inset-inline-start:calc(18px + env(safe-area-inset-left,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));width:60px;height:60px;border-radius:50%;background:var(--red);display:grid;place-items:center;box-shadow:0 12px 30px -8px rgba(0,0,0,.7),0 0 0 0 var(--red-glow);animation:fabp 2.6s infinite;transition:transform .2s}
+#app[dir="ltr"] .fab{inset-inline-start:auto;inset-inline-end:calc(18px + env(safe-area-inset-right,0px))}
+.fab:hover{transform:scale(1.07)}
+.fab svg{width:30px;height:30px;color:#fff}
+@keyframes fabp{0%{box-shadow:0 12px 30px -8px rgba(0,0,0,.7),0 0 0 0 rgba(239,46,51,.5)}70%{box-shadow:0 12px 30px -8px rgba(0,0,0,.7),0 0 0 16px rgba(239,46,51,0)}100%{box-shadow:0 12px 30px -8px rgba(0,0,0,.7),0 0 0 0 rgba(239,46,51,0)}}
+
+/* reveal (only below-the-fold elements are ever hidden, and only once JS runs) */
+.rv-hide{opacity:0;transform:translateY(26px)}
+.rv-in{opacity:1;transform:none;transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv-hide{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+
+<div id="app" dir="rtl" data-lang="ar" lang="ar">
+
+<div class="topstack">
+  <div class="bf" role="region" aria-label="Black Friday">
+    <div class="wrap">
+      <span class="tag">BLACK FRIDAY</span>
+      <span data-i="bf_text">خصم يصل لأكثر من 50% على الاشتراك السنوي. العرض ينتهي خلال</span>
+      <span class="cd js-cd" aria-live="off"></span>
+    </div>
+  </div>
+  <header class="site">
+    <div class="wrap">
+      <a href="#top" class="brand" aria-label="Be Pro"><img src="img/logo-dark.png" alt="Be Pro" width="520" height="171"></a>
+      <nav class="main" aria-label="Main">
+        <a href="#about" data-i="nav_about">عن Be Pro</a>
+        <a href="#method" data-i="nav_program">البرنامج</a>
+        <a href="#coach" data-i="nav_coach">الكوتش</a>
+        <a href="#locations" data-i="nav_locations">الفروع</a>
+        <a href="#pricing" data-i="nav_pricing">الباقات</a>
+        <a href="#faq" data-i="nav_faq">أسئلة شائعة</a>
+      </nav>
+      <div class="hdr-actions">
+        <button class="lang" id="langBtn" type="button" aria-label="Switch language">EN</button>
+        <a class="btn btn-red" href="#pricing" data-i="join">اشترك الآن</a>
+        <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  <div class="mnav" id="mnav" hidden>
+    <div class="wrap">
+      <a href="#about" data-i="nav_about">عن Be Pro</a>
+      <a href="#method" data-i="nav_program">البرنامج</a>
+      <a href="#coach" data-i="nav_coach">الكوتش</a>
+      <a href="#locations" data-i="nav_locations">الفروع</a>
+      <a href="#pricing" data-i="nav_pricing">الباقات</a>
+      <a href="#faq" data-i="nav_faq">أسئلة شائعة</a>
+    </div>
+  </div>
+</div>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <img class="mark" src="img/icon-dark.png" alt="" aria-hidden="true">
+  <div class="wrap">
+    <div class="hero-copy">
+      <h1 data-i="hero_h1">اتدرّب زي <span class="hl">المحترفين</span>.<br>في أي سن.</h1>
+      <p class="sub" data-i="hero_sub">تدريب كرة قدم احترافي مع كوتش فارس جميل. مهارة، تكتيك، لياقة، وعقلية ماتش، بنظام واضح وبرنامج بيتقاس.</p>
+      <div class="cta-row">
+        <a class="btn btn-red js-wa" data-msg="book" href="#"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#wa"/></svg><span data-i="cta_book">احجز مكانك</span></a>
+        <a class="btn btn-ghost" href="#pricing" data-i="cta_packages">شوف الباقات</a>
+      </div>
+      <div class="hero-loc">
+        <span><i></i><span data-i="loc1_short">التجمع الخامس · Vertex Club</span></span>
+        <span><i></i><span data-i="loc2_short">6 أكتوبر · Mina Garden City</span></span>
+      </div>
+    </div>
+    <div class="hero-pic">
+      <img src="img/coach-pitch-cut.webp" alt="كوتش فارس جميل في الملعب" data-i-alt="alt_hero" width="624" height="1254" fetchpriority="high">
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats" aria-label="Numbers">
+  <div class="wrap">
+    <div class="stat"><span class="v js-stat" data-key="players"></span><span class="l" data-i="st_players">لاعب اتدرّب معانا</span></div>
+    <div class="stat"><span class="v js-stat" data-key="years"></span><span class="l" data-i="st_years">سنين خبرة في التدريب</span></div>
+    <div class="stat"><span class="v js-stat" data-key="sessions"></span><span class="l" data-i="st_sessions">حصة تدريبية</span></div>
+    <div class="stat"><span class="v"><span class="num">8</span></span><span class="l" data-i="st_month">حصص في الشهر لكل لاعب</span></div>
+  </div>
+</section>
+
+<!-- WHO IT'S FOR -->
+<section class="band" id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow" data-i="who_eye">لمين Be Pro</span>
+      <h2 class="h2" data-i="who_h">مش ماتش خماسي مع الشلة.<br><span class="hl">ده تدريب.</span></h2>
+      <p class="lead" data-i="who_lead">Be Pro معمولة للراجل اللي عايز يلعب أحسن، يبقى أفت، ويتدرّب بنفس الطريقة اللي بيتدرّب بيها المحترفين. لو ده انت، انت في المكان الصح.</p>
+    </div>
+    <div class="who">
+      <div class="who-list">
+        <div class="persona rv">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l3 2"/></svg></div>
+          <div><h3 data-i="p1_h">لاعب قديم راجع للملعب</h3><p data-i="p1_p">كنت بتلعب في نادي أو مدرسة، وبعدها الشغل والحياة أخدوك. عايز ترجع لمستواك ولياقتك من غير إصابات.</p></div>
+        </div>
+        <div class="persona rv">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg></div>
+          <div><h3 data-i="p2_h">هاوي طموح</h3><p data-i="p2_p">بتلعب كل أسبوع وعارف إن عندك مستوى أعلى. محتاج حد يصلّح التكنيك ويعلّمك تقرا الماتش صح.</p></div>
+        </div>
+        <div class="persona rv">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/></svg></div>
+          <div><h3 data-i="p3_h">موظف أو بيزنس مان عايز نظام</h3><p data-i="p3_p">وقتك محسوب. عايز تتعلم كورة فنية صح، بتمرين له هدف ومواعيد ثابتة وكوتش بيتابع تطورك.</p></div>
+        </div>
+      </div>
+      <aside class="notfor rv">
+        <h3><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#EF2E33" stroke-width="2.4" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg><span data-i="nf_h">Be Pro مش ليك لو…</span></h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg><span data-i="nf2">عايز ماتش ودّي تفك بيه وخلاص.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg><span data-i="nf3">مش ناوي تلتزم بمواعيد التمرين.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg><span data-i="nf4">مستني نتيجة من غير مجهود.</span></li>
+        </ul>
+        <p class="foot" data-i="nf_foot">الالتزام هو أول حاجة بنتدرّب عليها.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- METHOD -->
+<section class="band alt" id="method">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow" data-i="m_eye">The Be Pro Method</span>
+      <h2 class="h2" data-i="m_h">أربع أعمدة. <span class="hl">لاعب كامل.</span></h2>
+      <p class="lead" data-i="m_lead">كل حصة بتشتغل على الأربعة مع بعض، عشان التحسّن يبان في الماتش مش في التمرين بس.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar rv">
+        <span class="k">Technical</span>
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"><circle cx="24" cy="24" r="18"/><path d="M24 15l8 6-3 9h-10l-3-9z"/><path d="M24 6v9M32 21l9-3M29 30l5 8M19 30l-5 8M16 21l-9-3"/></svg>
+        <h3 data-i="pl1_h">المهارة الفنية</h3>
+        <p data-i="pl1_p">استلام، تمرير، تسديد، ومراوغة بالقدمين. تكرار مدروس لحد ما الحركة تبقى أوتوماتيك.</p>
+      </div>
+      <div class="pillar rv">
+        <span class="k">Tactical</span>
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="8" width="38" height="32" rx="2"/><path d="M24 8v32"/><circle cx="24" cy="24" r="5"/><path d="M11 17l5 5M16 17l-5 5"/><circle cx="35" cy="30" r="3"/><path d="M14 30c4-6 10-8 18-1" stroke-dasharray="3 3"/></svg>
+        <h3 data-i="pl2_h">الفهم التكتيكي</h3>
+        <p data-i="pl2_p">التمركز، التحرك من غير كورة، الضغط، والتحول من الدفاع للهجوم. تفهم الماتش قبل ما يحصل.</p>
+      </div>
+      <div class="pillar rv">
+        <span class="k">Physical</span>
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 24h7l4-10 6 20 5-14 4 8h14"/></svg>
+        <h3 data-i="pl3_h">اللياقة البدنية</h3>
+        <p data-i="pl3_p">سرعة، تحمّل، قوة، ورشاقة بتمارين مخصوصة للكورة. وبنحميك من الإصابات بالإحماء والتهدئة الصح.</p>
+      </div>
+      <div class="pillar rv">
+        <span class="k">Mentality</span>
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="18"/><circle cx="24" cy="24" r="11"/><circle cx="24" cy="24" r="3.5" fill="currentColor"/></svg>
+        <h3 data-i="pl4_h">عقلية الماتش</h3>
+        <p data-i="pl4_p">تركيز تحت الضغط، قرارات أسرع، وثقة في الكورة. الفرق بين لاعب كويس ولاعب محترف بيبدأ من الدماغ.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER -->
+<section class="band" id="coach">
+  <div class="wrap founder">
+    <div class="f-pic rv">
+      <img class="wm" src="img/icon-dark.png" alt="" aria-hidden="true">
+      <img src="img/coach-studio.webp" alt="كوتش فارس جميل، مؤسس Be Pro" data-i-alt="alt_founder" width="624" height="1254" style="position:relative">
+      <div class="badge"><b data-i="f_name">كوتش فارس جميل</b><span data-i="f_role">المؤسس والمدرب الرئيسي</span></div>
+    </div>
+    <div>
+      <span class="eyebrow" data-i="f_eye">قابل المؤسس</span>
+      <h2 class="h2" data-i="f_h">كوتش <span class="hl">فارس جميل</span></h2>
+      <p class="lead" data-i="f_bio">أسس فارس Be Pro عشان يدّي الكبار نفس مستوى التدريب اللي بياخده لاعبين الأكاديميات والأندية: برنامج واضح، متابعة شخصية، ومعايير عالية في كل حصة. <span class="ph">[Bio: playing career + coaching background]</span></p>
+      <div class="creds">
+        <div class="cred"><span class="ph">[Coaching license]</span><small data-i="c1">رخصة التدريب</small></div>
+        <div class="cred"><span class="ph">[Playing career / clubs]</span><small data-i="c2">المسيرة كلاعب</small></div>
+        <div class="cred"><span class="ph">[Years coaching]</span><small data-i="c3">سنين في التدريب</small></div>
+        <div class="cred"><span class="ph">[Key achievement]</span><small data-i="c4">أبرز إنجاز</small></div>
+      </div>
+      <blockquote class="q">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 7H6a3 3 0 0 0-3 3v7h7v-7H6a1 1 0 0 1 1-1h3zM21 7h-4a3 3 0 0 0-3 3v7h7v-7h-4a1 1 0 0 1 1-1h3z"/></svg>
+        <span data-i="f_quote">«السن مش عذر. اللي بيفرق بين لاعب ومحترف هو طريقة التدريب، والالتزام كل أسبوع.»</span>
+        <cite><span data-i="f_cite">كوتش فارس جميل</span> <span class="ph">[Draft quote: confirm with Coach Fares]</span></cite>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- SESSION -->
+<section class="band alt" id="session">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow" data-i="s_eye">الحصة من جوّه</span>
+      <h2 class="h2" data-i="s_h">كل دقيقة <span class="hl">ليها هدف.</span></h2>
+      <p class="lead" data-i="s_lead">مفيش وقت ضايع. الحصة متقسمة بنفس منطق تمرين الأندية المحترفة.</p>
+    </div>
+    <div class="timeline">
+      <div class="step rv"><div class="dot">01</div><div class="min">15 MIN</div><h3 data-i="t1_h">الإحماء</h3><p data-i="t1_p">تنشيط الجسم وتمارين مرونة وحركة تحميك من الإصابة.</p></div>
+      <div class="step rv"><div class="dot">02</div><div class="min">30 MIN</div><h3 data-i="t2_h">تمارين فنية</h3><p data-i="t2_p">لمسة أولى، تمرير، وتسديد بتكرار عالي.</p></div>
+      <div class="step rv"><div class="dot">03</div><div class="min">30 MIN</div><h3 data-i="t3_h">شغل تكتيكي</h3><p data-i="t3_p">مواقف لعب حقيقية: ضغط، تمركز، وتحولات.</p></div>
+      <div class="step rv"><div class="dot">04</div><div class="min">35 MIN</div><h3 data-i="t4_h">ماتش تطبيقي</h3><p data-i="t4_p">تطبّق اللي اتعلمته تحت ضغط الماتش، والكوتش بيوقف ويصحح.</p></div>
+      <div class="step rv"><div class="dot">05</div><div class="min">10 MIN</div><h3 data-i="t5_h">التهدئة</h3><p data-i="t5_p">إطالات وملاحظات سريعة على أداءك.</p></div>
+    </div>
+    <div class="tl-total"><span data-i="tl_total">مدة الحصة</span><b>120 MIN</b><span data-i="tl_hours">(ساعتين)</span><span class="ph">[Confirm split]</span></div>
+    <div class="media-ph" aria-label="Training photo placeholders">
+      <div>[ PHOTO / VIDEO ]<br>Training session — wide shot</div>
+      <div>[ PHOTO ]<br>Technical drill</div>
+      <div>[ PHOTO ]<br>Coach briefing</div>
+      <div>[ PHOTO ]<br>Match play</div>
+      <div>[ PHOTO ]<br>Team huddle</div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATIONS -->
+<section class="band" id="locations">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow" data-i="l_eye">الفروع</span>
+      <h2 class="h2" data-i="l_h">فرعين. <span class="hl">نفس المستوى.</span></h2>
+      <p class="lead" data-i="l_lead">اختار الأقرب ليك. نفس البرنامج ونفس معايير التدريب في الفرعين.</p>
+    </div>
+    <div class="locs">
+      <article class="loc rv">
+        <div class="top"><span class="area">New Cairo</span><h3 data-i="loc1_h">التجمع الخامس</h3><p class="club">Vertex Club</p></div>
+        <dl>
+          <div><dt data-i="addr">العنوان</dt><dd><span class="ph">[Address]</span></dd></div>
+          <div><dt data-i="days">أيام التمرين</dt><dd><span class="ph">[Days]</span></dd></div>
+          <div><dt data-i="times">المواعيد</dt><dd><span class="ph">[Times]</span></dd></div>
+        </dl>
+        <div class="act">
+          <a class="btn btn-ghost" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Vertex+Club+New+Cairo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg><span data-i="dir">الاتجاهات</span></a>
+          <a class="btn btn-red js-wa" data-msg="loc" data-loc="nc" href="#"><span data-i="book_here">احجز في الفرع ده</span></a>
+        </div>
+      </article>
+      <article class="loc rv">
+        <div class="top"><span class="area">6th of October</span><h3 data-i="loc2_h">6 أكتوبر</h3><p class="club">Mina Garden City Club</p></div>
+        <dl>
+          <div><dt data-i="addr">العنوان</dt><dd><span class="ph">[Address]</span></dd></div>
+          <div><dt data-i="days">أيام التمرين</dt><dd><span class="ph">[Days]</span></dd></div>
+          <div><dt data-i="times">المواعيد</dt><dd><span class="ph">[Times]</span></dd></div>
+        </dl>
+        <div class="act">
+          <a class="btn btn-ghost" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Mina+Garden+City+Club+6th+of+October"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg><span data-i="dir">الاتجاهات</span></a>
+          <a class="btn btn-red js-wa" data-msg="loc" data-loc="oc" href="#"><span data-i="book_here">احجز في الفرع ده</span></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="band alt pricing" id="pricing">
+  <img class="bgmark" src="img/icon-dark.png" alt="" aria-hidden="true">
+  <div class="wrap" style="position:relative">
+    <div class="sec-head">
+      <span class="eyebrow">Black Friday</span>
+      <h2 class="h2" data-i="pr_h">اختار باقتك. <span class="hl">ووفّر لحد 52%.</span></h2>
+      <p class="lead" data-i="pr_lead">كل الباقات فيها 8 حصص في الشهر. كل ما تلتزم أكتر، سعر الحصة بيقل.</p>
+    </div>
+    <div class="picker">
+      <span data-i="pick_loc">اختار الفرع:</span>
+      <div class="seg" role="group" aria-label="Location">
+        <button type="button" data-loc="nc" aria-pressed="true" data-i="seg_nc">التجمع الخامس</button>
+        <button type="button" data-loc="oc" aria-pressed="false" data-i="seg_oc">6 أكتوبر</button>
+      </div>
+    </div>
+    <div class="plans">
+      <!-- Monthly -->
+      <article class="plan monthly rv">
+        <span class="bfb"><img src="img/icon-dark.png" alt="">BLACK FRIDAY</span>
+        <h3 data-i="pm_h">شهري</h3>
+        <span class="dur" data-i="pm_d">اشتراك شهر واحد</span>
+        <div class="price"><span class="amt">1,400</span><span class="cur" data-i="egp_m">جنيه / شهر</span></div>
+        <div class="was">&nbsp;</div>
+        <div class="metrics">
+          <div class="metric"><small data-i="per_session">سعر الحصة</small><b>175</b></div>
+          <div class="metric"><small data-i="saving">التوفير</small><b>—</b></div>
+        </div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg><span data-i="f_8">8 حصص تدريب</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg><span data-i="f_loc">تختار الفرع اللي يناسبك</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg><span data-i="f_coach">تدريب احترافي مع كوتش فارس</span></li>
+        </ul>
+        <a class="btn btn-ghost js-wa" data-msg="plan" data-plan="m" href="#" data-i="pm_cta">ابدأ الشهر ده</a>
+      </article>
+      <!-- 3 Months -->
+      <article class="plan popular rv">
+        <span class="ribbon" data-i="popular">الأكثر طلبًا</span>
+        <span class="bfb"><img src="img/icon-dark.png" alt="">BLACK FRIDAY</span>
+        <h3 data-i="p3m_h">3 شهور</h3>
+        <span class="dur" data-i="p3m_d">24 حصة · 1,200 جنيه في الشهر</span>
+        <div class="price"><span class="amt">3,600</span><span class="cur" data-i="egp">جنيه</span></div>
+        <div class="was">4,200</div>
+        <div class="metrics">
+          <div class="metric"><small data-i="per_session">سعر الحصة</small><b>150</b></div>
+          <div class="metric save"><small data-i="saving">التوفير</small><b>600</b></div>
+        </div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg><span data-i="f_8m">8 حصص في الشهر</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg><span data-i="f_loc">تختار الفرع اللي يناسبك</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg><span data-i="f_coach">تدريب احترافي مع كوتش فارس</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg><span><span data-i="f_extra3">متابعة مستوى كل شهر</span> <span class="ph">[Extra]</span></span></li>
+        </ul>
+        <a class="btn btn-red js-wa" data-msg="plan" data-plan="q" href="#" data-i="p3m_cta">احجز 3 شهور</a>
+      </article>
+      <!-- Annual -->
+      <article class="plan best rv">
+        <span class="ribbon" data-i="best">أفضل قيمة</span>
+        <span class="pct">52%<small>OFF</small></span>
+        <span class="bfb"><img src="img/icon-dark.png" alt="">BLACK FRIDAY</span>
+        <h3 data-i="py_h">سنوي</h3>
+        <span class="dur" data-i="py_d">96 حصة · حوالي 667 جنيه في الشهر</span>
+        <div class="price"><span class="amt">8,000</span><span class="cur" data-i="egp_y">جنيه / سنة</span></div>
+        <div class="was">16,800</div>
+        <div class="metrics">
+          <div class="metric"><small data-i="per_session">سعر الحصة</small><b>83</b></div>
+          <div class="metric save"><small data-i="saving">التوفير</small><b>8,800</b></div>
+        </div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg><span data-i="f_8m">8 حصص في الشهر</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg><span data-i="f_loc">تختار الفرع اللي يناسبك</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg><span data-i="f_coach">تدريب احترافي مع كوتش فارس</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg><span data-i="f_price_lock">سعر البلاك فرايدي ثابت طول السنة</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg><span><span data-i="f_extra_y">أولوية في حجز المجموعات</span> <span class="ph">[Extra]</span></span></li>
+        </ul>
+        <a class="btn btn-red js-wa" data-msg="plan" data-plan="y" href="#" data-i="py_cta">احجز السنة بسعر البلاك فرايدي</a>
+      </article>
+    </div>
+    <div class="urgency">
+      <p><span class="pulse"></span><span data-i="urg">الأماكن محدودة في كل مجموعة عشان الكوتش يتابع كل لاعب. العرض ينتهي خلال:</span></p>
+      <span class="cd js-cd"></span>
+    </div>
+    <p class="pay-note" data-i="pay_note">الأسعار بالجنيه المصري. الحجز والدفع بيتم بعد التأكيد على واتساب.</p>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="band" id="testimonials">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow" data-i="ts_eye">اللاعبين بيقولوا</span>
+      <h2 class="h2" data-i="ts_h">النتيجة <span class="hl">بتتكلم.</span></h2>
+      <p class="lead"><span class="ph">[Replace with real player testimonials: name, age, photo, and what changed]</span></p>
+    </div>
+    <div class="tests">
+      <div class="tcard rv"><div class="stars" aria-hidden="true"></div><p>[Player testimonial #1]</p><div class="who-t"><div class="avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></div><div><b>[Name]</b><small>[Age] · [Branch]</small></div></div></div>
+      <div class="tcard rv"><div class="stars" aria-hidden="true"></div><p>[Player testimonial #2]</p><div class="who-t"><div class="avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></div><div><b>[Name]</b><small>[Age] · [Branch]</small></div></div></div>
+      <div class="tcard rv"><div class="stars" aria-hidden="true"></div><p>[Player testimonial #3]</p><div class="who-t"><div class="avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></div><div><b>[Name]</b><small>[Age] · [Branch]</small></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="band alt" id="faq">
+  <div class="wrap faq-grid">
+    <div>
+      <span class="eyebrow" data-i="fq_eye">أسئلة شائعة</span>
+      <h2 class="h2" data-i="fq_h">عندك سؤال؟</h2>
+      <p class="lead" data-i="fq_lead">لو سؤالك مش هنا، كلمنا على واتساب وهنرد عليك بسرعة.</p>
+      <div class="cta-row"><a class="btn btn-ghost js-wa" data-msg="ask" href="#"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#wa"/></svg><span data-i="ask_wa">اسأل على واتساب</span></a></div>
+    </div>
+    <div class="faq">
+      <details open><summary><span data-i="q1">لازم يكون عندي خبرة قبل كده؟</span><i></i></summary><div class="a" data-i="a1">لا. بنقيّم مستواك في أول حصة ونحطك في المجموعة المناسبة. المهم يكون عندك الرغبة والالتزام.</div></details>
+      <details><summary><span data-i="q2">أجيب معايا إيه؟</span><i></i></summary><div class="a" data-i="a2">حذاء كورة مناسب للأرضية، شين جارد، لبس رياضي، ومية. <span class="ph">[Confirm kit list]</span></div></details>
+      <details><summary><span data-i="q3">ينفع أغيّر الفرع؟</span><i></i></summary><div class="a" data-i="a3">أيوه، بعد التنسيق مع الإدارة وحسب الأماكن المتاحة في المجموعة. <span class="ph">[Confirm policy]</span></div></details>
+      <details><summary><span data-i="q4">لو فاتتني حصة؟</span><i></i></summary><div class="a" data-i="a4">بلّغنا قبلها بوقت كافي وهنحاول نعوّضها في مجموعة تانية. <span class="ph">[Confirm make-up policy]</span></div></details>
+      <details><summary><span data-i="q5">الدفع إزاي؟</span><i></i></summary><div class="a" data-i="a5">بعد ما تحجز على واتساب بنبعتلك طرق الدفع المتاحة. <span class="ph">[Cash / InstaPay / Vodafone Cash / card]</span></div></details>
+      <details><summary><span data-i="q6">في حصة تجريبية؟</span><i></i></summary><div class="a" data-i="a6">كلمنا على واتساب ونقولك المتاح في الفرع اللي تختاره. <span class="ph">[Confirm trial policy + price]</span></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="band final">
+  <img class="wm" src="img/icon-dark.png" alt="" aria-hidden="true">
+  <div class="wrap">
+    <span class="eyebrow" data-i="fin_eye">مكانك مستنيك</span>
+    <h2 class="h2" data-i="fin_h">بطّل تتفرج.<br><span class="hl">ابدأ تتدرّب.</span></h2>
+    <p data-i="fin_p">سعر البلاك فرايدي لفترة محدودة، والمجموعات بتتقفل لما تكمل. احجز مكانك دلوقتي.</p>
+    <div class="cta-row">
+      <a class="btn btn-red js-wa" data-msg="book" href="#"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#wa"/></svg><span data-i="cta_wa">احجز على واتساب</span></a>
+      <a class="btn btn-ghost" href="#pricing" data-i="cta_packages">شوف الباقات</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <a href="#top" class="logo"><img src="img/logo-dark.png" alt="Be Pro" width="520" height="171" loading="lazy"></a>
+        <p class="tagline" data-i="ft_tag">أكاديمية تدريب كرة قدم فنية احترافية مع كوتش فارس جميل.</p>
+        <div class="social">
+          <a href="#" aria-label="Instagram" title="[Instagram link]"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="TikTok" title="[TikTok link]"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9.7a5.7 5.7 0 1 0 4.9 5.7V9.1a7.3 7.3 0 0 0 4.3 1.4V7.4a4.3 4.3 0 0 1-3.2-1.6z"/></svg></a>
+          <a class="js-wa" data-msg="ask" href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#wa"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Locations</h4>
+        <ul>
+          <li><b data-i="loc1_h">التجمع الخامس</b><br><span style="color:var(--muted)">Vertex Club</span></li>
+          <li><b data-i="loc2_h">6 أكتوبر</b><br><span style="color:var(--muted)">Mina Garden City Club</span></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><span data-i="phone">تليفون:</span> <span class="num js-phone">[PHONE]</span></li>
+          <li><span data-i="whatsapp">واتساب:</span> <span class="num js-wanum">[WHATSAPP NUMBER]</span></li>
+          <li><span class="ph">[Instagram link]</span> <span class="ph">[TikTok link]</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy"><span>© <span class="js-year">2026</span> Be Pro Football Academy. <span data-i="rights">جميع الحقوق محفوظة.</span></span><span>Train like a pro.</span></div>
+  </div>
+</footer>
+
+<a class="fab js-wa" data-msg="book" href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#wa"/></svg></a>
+</div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="wa" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></symbol>
+</svg>
+
+<script>
+/* ===================== EDIT THESE ===================== */
+const CONFIG = {
+  whatsapp: "201149400306",            // WhatsApp number in international format (01149400306)
+  phone: "01149400306",
+  offerEnds: "2026-11-13T23:59:59+02:00", // Black Friday deadline: one week (Cairo time)
+  stats: { players: null, years: null, sessions: null } // e.g. { players: 500, years: 10, sessions: 3000 }
+};
+/* ====================================================== */
+
+const app = document.getElementById('app');
+const EN = {
+  bf_text:"Up to 52% off the annual plan. Offer ends in",
+  nav_about:"About",nav_program:"Program",nav_coach:"Coach",nav_locations:"Locations",nav_pricing:"Pricing",nav_faq:"FAQ",
+  join:"Join Now",
+  hero_h1:'Train like a <span class="hl">pro</span>.<br>At any age.',
+  hero_sub:"Professional football training with Coach Fares Gamil. Skill, tactics, fitness and match mentality, on a clear program with measurable progress.",
+  cta_book:"Book Your Spot",cta_packages:"See Packages",
+  loc1_short:"New Cairo · Vertex Club",loc2_short:"6th of October · Mina Garden City",
+  alt_hero:"Coach Fares Gamil on the pitch",alt_founder:"Coach Fares Gamil, founder of Be Pro",
+  st_players:"Players trained",st_years:"Years of coaching",st_sessions:"Sessions delivered",st_month:"Sessions per player each month",
+  who_eye:"Who it's for",who_h:'Not a five-a-side with friends.<br><span class="hl">This is training.</span>',
+  who_lead:"Be Pro is built for men who want to play better, get fitter and train the way professionals do. If that's you, you're in the right place.",
+  p1_h:"The former player coming back",p1_p:"You played for a club or school, then work and life took over. You want your level and fitness back without getting injured.",
+  p2_h:"The ambitious amateur",p2_p:"You play every week and know there's another level in you. You need someone to fix your technique and teach you to read the game.",
+  p3_h:"The professional who wants structure",p3_p:"Your time is limited. You want to learn proper technical football, with purposeful sessions, fixed times and a coach who tracks your progress.",
+  nf_h:"Be Pro is not for you if…",nf2:"You just want a casual kickabout.",nf3:"You won't commit to the training schedule.",nf4:"You expect results without the work.",
+  nf_foot:"Commitment is the first thing we train.",
+  m_eye:"The Be Pro Method",m_h:'Four pillars. <span class="hl">One complete player.</span>',m_lead:"Every session works all four together, so the progress shows up in matches, not just in training.",
+  pl1_h:"Technical skills",pl1_p:"First touch, passing, shooting and dribbling with both feet. Deliberate repetition until it becomes automatic.",
+  pl2_h:"Tactical understanding",pl2_p:"Positioning, off-the-ball movement, pressing and transitions. Read the game before it happens.",
+  pl3_h:"Physical conditioning",pl3_p:"Football-specific speed, endurance, strength and agility, with proper warm-ups and cool-downs to keep you injury-free.",
+  pl4_h:"Match mentality",pl4_p:"Focus under pressure, faster decisions and confidence on the ball. The gap between good and pro starts in the head.",
+  f_name:"Coach Fares Gamil",f_role:"Founder & Head Coach",f_eye:"Meet the founder",f_h:'Coach <span class="hl">Fares Gamil</span>',
+  f_bio:'Fares founded Be Pro to give adults the same standard of coaching that academy and club players get: a clear program, personal attention and high standards in every session. <span class="ph">[Bio: playing career + coaching background]</span>',
+  c1:"Coaching license",c2:"Playing career",c3:"Years coaching",c4:"Key achievement",
+  f_quote:"“Age is not an excuse. What separates a player from a pro is how you train, and showing up every week.”",f_cite:"Coach Fares Gamil",
+  s_eye:"Inside a session",s_h:'Every minute <span class="hl">has a purpose.</span>',s_lead:"No wasted time. Sessions follow the same logic as professional club training.",
+  t1_h:"Warm-up",t1_p:"Activation, mobility and movement prep to protect you from injury.",
+  t2_h:"Technical drills",t2_p:"First touch, passing and finishing at high repetition.",
+  t3_h:"Tactical work",t3_p:"Real game situations: pressing, positioning and transitions.",
+  t4_h:"Game play",t4_p:"Apply it under match pressure while the coach stops play and corrects.",
+  t5_h:"Cool-down",t5_p:"Stretching and quick feedback on your performance.",tl_total:"Session length",tl_hours:"(2 hours)",
+  l_eye:"Locations",l_h:'Two locations. <span class="hl">One standard.</span>',l_lead:"Pick the one closest to you. Same program and the same coaching standards at both.",
+  loc1_h:"New Cairo",loc2_h:"6th of October",addr:"Address",days:"Training days",times:"Times",dir:"Get Directions",book_here:"Book this location",
+  pr_h:'Pick your plan. <span class="hl">Save up to 52%.</span>',pr_lead:"Every plan includes 8 sessions a month. The more you commit, the less each session costs.",
+  pick_loc:"Choose your location:",seg_nc:"New Cairo",seg_oc:"6th of October",
+  pm_h:"Monthly",pm_d:"One-month membership",egp_m:"EGP / month",egp:"EGP",egp_y:"EGP / year",per_session:"Per session",saving:"You save",
+  f_8:"8 training sessions",f_8m:"8 sessions every month",f_loc:"Choice of location",f_coach:"Professional coaching with Coach Fares",
+  pm_cta:"Start this month",popular:"Most Popular",p3m_h:"3 Months",p3m_d:"24 sessions · 1,200 EGP per month",f_extra3:"Monthly progress check",p3m_cta:"Book 3 months",
+  best:"Best Value",py_h:"Annual",py_d:"96 sessions · about 667 EGP per month",f_price_lock:"Black Friday price locked for the full year",f_extra_y:"Priority group booking",py_cta:"Lock in the annual deal",
+  urg:"Spots are limited in every group so the coach can follow each player. Offer ends in:",
+  pay_note:"Prices in Egyptian pounds. Booking and payment are confirmed on WhatsApp.",
+  ts_eye:"Players say",ts_h:'The results <span class="hl">speak.</span>',
+  fq_eye:"FAQ",fq_h:"Got a question?",fq_lead:"If your question isn't here, message us on WhatsApp and we'll get back to you fast.",ask_wa:"Ask on WhatsApp",
+  q1:"Do I need prior experience?",a1:"No. We assess your level in the first session and place you in the right group. What matters is the drive to improve and commitment.",
+  q2:"What should I bring?",a2:'Football boots suited to the surface, shin guards, sportswear and water. <span class="ph">[Confirm kit list]</span>',
+  q3:"Can I switch locations?",a3:'Yes, after arranging it with the team and depending on available spots. <span class="ph">[Confirm policy]</span>',
+  q4:"What if I miss a session?",a4:'Let us know in advance and we\'ll try to fit you into another group. <span class="ph">[Confirm make-up policy]</span>',
+  q5:"How do I pay?",a5:'Once you book on WhatsApp we send you the available payment methods. <span class="ph">[Cash / InstaPay / Vodafone Cash / card]</span>',
+  q6:"Is there a trial session?",a6:'Message us on WhatsApp and we\'ll tell you what\'s available at your location. <span class="ph">[Confirm trial policy + price]</span>',
+  fin_eye:"Your spot is waiting",fin_h:'Stop watching.<br><span class="hl">Start training.</span>',fin_p:"Black Friday pricing is for a limited time, and groups close when they're full. Book your spot now.",cta_wa:"Book on WhatsApp",
+  ft_tag:"Professional technical football academy with Coach Fares Gamil.",phone:"Phone:",whatsapp:"WhatsApp:",rights:"All rights reserved."
+};
+const AR = {};
+document.querySelectorAll('[data-i]').forEach(el => { if(!(el.dataset.i in AR)) AR[el.dataset.i] = el.innerHTML; });
+document.querySelectorAll('[data-i-alt]').forEach(el => { AR[el.dataset.iAlt] = el.alt; });
+
+const CD_LABELS = { ar:{d:'ي',h:'س',m:'د',s:'ث'}, en:{d:'d',h:'h',m:'m',s:'s'} };
+let lang = 'ar';
+function setLang(l){
+  lang = l;
+  const dict = l === 'en' ? EN : AR;
+  app.dir = l === 'en' ? 'ltr' : 'rtl';
+  app.lang = l; app.dataset.lang = l;
+  document.documentElement.lang = l;
+  document.querySelectorAll('[data-i]').forEach(el => { const v = dict[el.dataset.i]; if (v != null) el.innerHTML = v; });
+  document.querySelectorAll('[data-i-alt]').forEach(el => { const v = dict[el.dataset.iAlt]; if (v) el.alt = v; });
+  document.getElementById('langBtn').textContent = l === 'en' ? 'عربي' : 'EN';
+  tick();
+  try { localStorage.setItem('bepro-lang', l); } catch(e){}
+}
+document.getElementById('langBtn').addEventListener('click', () => setLang(lang === 'ar' ? 'en' : 'ar'));
+
+/* mobile menu */
+const burger = document.getElementById('burger'), mnav = document.getElementById('mnav');
+burger.addEventListener('click', () => { const o = mnav.hidden; mnav.hidden = !o; burger.setAttribute('aria-expanded', String(o)); });
+mnav.addEventListener('click', e => { if (e.target.closest('a')) { mnav.hidden = true; burger.setAttribute('aria-expanded','false'); } });
+
+/* location picker */
+let selLoc = 'nc';
+const LOC = { nc:{ar:'التجمع الخامس (Vertex Club)', en:'New Cairo (Vertex Club)'}, oc:{ar:'6 أكتوبر (Mina Garden City Club)', en:'6th of October (Mina Garden City Club)'} };
+const PLAN = { m:{ar:'الشهرية (1,400 جنيه)', en:'Monthly (1,400 EGP)'}, q:{ar:'الـ 3 شهور (3,600 جنيه)', en:'3 Months (3,600 EGP)'}, y:{ar:'السنوية (8,000 جنيه)', en:'Annual (8,000 EGP)'} };
+document.querySelectorAll('.seg button').forEach(b => b.addEventListener('click', () => {
+  selLoc = b.dataset.loc;
+  document.querySelectorAll('.seg button').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+}));
+
+/* WhatsApp links with pre-filled Arabic message */
+function waMessage(el){
+  const kind = el.dataset.msg;
+  if (kind === 'plan') return `أهلاً Be Pro\nعايز أحجز الباقة ${PLAN[el.dataset.plan].ar} بعرض البلاك فرايدي.\nالفرع: ${LOC[selLoc].ar}\nممكن تبعتولي المواعيد المتاحة وطريقة الدفع؟`;
+  if (kind === 'loc') return `أهلاً Be Pro\nعايز أحجز مكان في فرع ${LOC[el.dataset.loc].ar}.\nممكن تبعتولي أيام ومواعيد التمرين والباقات المتاحة؟`;
+  if (kind === 'ask') return `أهلاً Be Pro\nعندي استفسار عن التدريب في الأكاديمية.`;
+  return `أهلاً Be Pro\nعايز أحجز مكاني وأعرف تفاصيل عرض البلاك فرايدي والفروع المتاحة.`;
+}
+function waHref(el){ return `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(waMessage(el))}`; }
+document.querySelectorAll('.js-wa').forEach(el => {
+  el.target = '_blank'; el.rel = 'noopener';
+  el.href = waHref(el);
+  const refresh = () => { el.href = waHref(el); };
+  el.addEventListener('pointerdown', refresh); el.addEventListener('focus', refresh); el.addEventListener('click', refresh);
+});
+document.querySelectorAll('.js-wanum').forEach(el => { if (!/X/.test(CONFIG.whatsapp)) el.textContent = '0' + CONFIG.whatsapp.slice(2); });
+document.querySelectorAll('.js-phone').forEach(el => el.textContent = CONFIG.phone);
+document.querySelectorAll('.js-year').forEach(el => el.textContent = new Date().getFullYear());
+
+/* stars */
+const star = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg>';
+document.querySelectorAll('.stars').forEach(s => s.innerHTML = star.repeat(5));
+
+/* countdown */
+const end = new Date(CONFIG.offerEnds).getTime();
+const pad = n => String(n).padStart(2,'0');
+function tick(){
+  const L = CD_LABELS[lang];
+  let ms = Math.max(0, end - Date.now());
+  const d = Math.floor(ms/864e5); ms -= d*864e5;
+  const h = Math.floor(ms/36e5); ms -= h*36e5;
+  const m = Math.floor(ms/6e4); ms -= m*6e4;
+  const s = Math.floor(ms/1e3);
+  const html = end - Date.now() <= 0
+    ? `<span>${lang==='en'?'Offer ended':'العرض انتهى'}</span>`
+    : `<span>${pad(d)}<small>${L.d}</small></span><span>${pad(h)}<small>${L.h}</small></span><span>${pad(m)}<small>${L.m}</small></span><span>${pad(s)}<small>${L.s}</small></span>`;
+  document.querySelectorAll('.js-cd').forEach(el => el.innerHTML = html);
+}
+tick(); setInterval(tick, 1000);
+
+/* stats + counters */
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+document.querySelectorAll('.js-stat').forEach(el => {
+  const v = CONFIG.stats[el.dataset.key];
+  if (v == null) { el.innerHTML = '<span class="ph" style="font-size:14px">[ number ]</span>'; return; }
+  el.innerHTML = `<span class="num">${v.toLocaleString('en-US')}</span><em>+</em>`;
+  el.dataset.target = v;
+});
+
+/* reveal + counters, only for elements below the fold */
+const io = 'IntersectionObserver' in window && !reduce ? new IntersectionObserver(entries => {
+  entries.forEach(en => {
+    if (!en.isIntersecting) return;
+    const el = en.target; io.unobserve(el);
+    if (el.classList.contains('rv-hide')) { el.classList.add('rv-in'); el.classList.remove('rv-hide'); }
+    if (el.dataset.target) countUp(el);
+  });
+}, { threshold: .15 }) : null;
+function countUp(el){
+  const t = +el.dataset.target, n = el.querySelector('.num'), t0 = performance.now(), dur = 1400;
+  const step = now => { const p = Math.min(1, (now - t0)/dur), e = 1 - Math.pow(1-p, 3); n.textContent = Math.round(t*e).toLocaleString('en-US'); if (p < 1) requestAnimationFrame(step); };
+  requestAnimationFrame(step);
+}
+if (io) {
+  const vh = innerHeight;
+  document.querySelectorAll('.rv').forEach(el => { if (el.getBoundingClientRect().top > vh) { el.classList.add('rv-hide'); io.observe(el); } });
+  document.querySelectorAll('.js-stat[data-target]').forEach(el => io.observe(el));
+}
+
+/* hero glow follows pointer on desktop */
+const hero = document.querySelector('.hero');
+if (!reduce && matchMedia('(pointer:fine)').matches) hero.addEventListener('pointermove', e => {
+  const r = hero.getBoundingClientRect(); hero.style.setProperty('--glow-x', ((e.clientX - r.left)/r.width*100).toFixed(1) + '%');
+});
+
+try { if (localStorage.getItem('bepro-lang') === 'en') setLang('en'); } catch(e){}
+</script>
+
+</body>
+</html>
